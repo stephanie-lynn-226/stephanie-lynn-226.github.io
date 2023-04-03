@@ -1,0 +1,191 @@
+Bob's Talk: October 28th
+
+Theorem 1.2: Let K be a number field, E/K an elliptic curve with E(K)[2] = {0}.  Let r be a non-negative integer, and 
+suppose that E has a quadratic twist E^{F_0} for which d_2(E^{F_0}/K) = r.  Then: 
+a) If Gal(K(E[2])/K)) \cong S_3, then N_r(E,X) \gg X/(log X)^{2/3}.
+b) If Gal(K(E[2])/K)) \dont Z/3Z, then N_(E,X) \gg X/(log X)^{1/3}.
+
+(Recall d_2(E/K) = dim Sel_2(E/K).)
+
+N_r(E,X) = # {quadratic F/K: d_2(E^F/K) = r, N_{K/Q} f(F/K) \leq X }.
+
+Key Input from Section 3:
+
+Corollary 3.4(ii) : Let K be a number field, E/K an elliptic curve with E(K)[2] = 0, F/K a quadratic extension.  Suppose:
+A)(1) all places v of additive reduction split in F
+  (2) all places v of multiplicative reduction and ord_v(Delta_E) is even, split in F.
+  (3) all v|2 split in F.  
+  (4) All Archimedean v for which ord_v(Delta_E) is odd split in F. 
+B) All places v of multiplicative reduction where ord_v (Delta_E) is odd are unramified in F.
+C) For each finite v whrere F/K is ramified, E(K_v)[2] = 0.
+then d_2(E^F/K) = d_2(E/K).
+
+Bob says: the argument may not be so clear unless the extensions M and N are linearly disjoint over K.
+
+We want to produce a lot of quadratic F/K for which d_2(E^F/K) = r.
+
+Construction: M/K finite Galois
+              N/K finite abelian
+
+MN/K extension
+
+In applications, M = K(E[2]).
+
+N = ray class field to K for the conductor 8*Delta_E*oo.  (The 8 esnures that 2 splis in F/K.)
+
+Let S be a normal subset of Gal(M/K).
+
+In the application, we take S = {s in Gal(M/K) such that |s| = 3}.
+
+Let PP_S be the set of all primes p of K such that p is unramified in MN/K and for which the 
+Artin map [p,M/K] is contained in S.
+
+Let NN = {prod_{i=1}^r p_i: p_1,...,p_r in PP_S are distinct}
+
+NN_1 = {a in NN: [a,N/K] = 1}.
+
+The consequence of this is that: if a is in NN_1, then since N is the (8oo \Delta_E)-ray class field of K, there 
+is an alpha in K such that a = (alpha) with alpha \equiv 1 \pmod 8 oo \Delta_E: in particular alpha is totally 
+positive and congruent to 1 mod 8.  Take F = K(\sqrt{\alpha}).  Then the conditions  A) and B) of Corollary 3.4(ii) 
+are satisfied, so remains to look at C).  Regarding C), the only places of K which are ramified in K(\alpha)/K 
+are the ones corresponding to primes p | (alpha) = p_1*...*p_r.  (Note alpha \equiv 1 mod 8oo Delta_E, so no p_i 
+divides 2 \Delta_E.)  For p = p_i, we required that the Frobenius class [p_i,M/K] \subset S, i.e., the Frobenius 
+has order 3.  So the completion of K(E[2])/K is nonsplit over such p_i's.  
+
+Thus, for F = K(\sqrt{alpha}) with alpha the above generator of A in NN_1, we have d_2(E^F/K) = d_2(E/K).
+
+Analytic claim: # {a in NN_1: N_{K/Q}(a) \leq X} > X/(log X)^a}.
+
+where a = 2/3 in the S_3 case, 1/3 in the Z/3Z case.
+
+Comment: Easy to reduce to the case where d_2(E/K) = r: If not, simply replace E by E^{F_0} and observe that the 
+conductor bounds change only by a constant.  For the analytic bounds, observe that 
+the conductor of K(\sqrt{\alpha \alpha_0}) divides the product of the conductors of K(\sqrt{\alpha}) and 
+the conductors of K(\sqrt{\alpha_0}).  
+
+Now to the proof of the analytic claim:
+
+Lemma 4.1: There exists a positive real constant C such that 
+
+|a in NN_1 : N_{K/Q} a < X| = C(1 + o(1)) X/(log X)^{1-|S|/[M:K]}.
+
+Bob says: This is true when M and N are linearly disjoint over K.  It is in general false!
+
+So let's first suppose the linear disjointness condition.  Put 
+
+A = Gal(N/K).  If chi: A -> C^{\times} is a character, put
+
+f_{chi}(s) = \sum_{a in NN} \chi(a)/(Na)^s = \prod_{p in PP_S} (1+\chi(p) (Np)^{-s}).
+
+Absolutely convergent for Re(s) > 1.
+
+Note: different from a usual Euler product which has a minus sign and an inverse, due to the restriction to 
+squarefree ideals.
+
+log f_{chi}(s) = sum_{p in P_S} ==(Taylor expansion)== sum_{p in P_S} (\chi(p)/Np^s - 1/2 \chi(p)^2/Np^{2s} + 1/3 ...)
+
+The sum of -1/2 \chi(p)^2/Np^{2s} + ... is holomorphic for Res) > 1/2.
+
+sum_p sum_{m=2}^{oo} 1/p^{m\sigma} = (1 + 1/p^{sigma})(sum_{k=1}^{oo} 1/p^{2k sigma}) <= 2 \sum_n 1/n^{2\sigma}.
+
+Therefore, up to a function which is analytic at s = 1, this is equal to 
+
+sum_{p in PP_S}) \chi(p)/Np^s.
+
+Mazur and Rubin Claim: This is equivalent to \delta_X log(1/s-1), where
+
+d_{\chi} = {0, \chi nontrivial
+           {|S|/[M:K], if \chi = \chi_0 is the trivial character
+
+Suppose for simplicity that S = [sigma] is a single conjugacy class in Gal(M/K).
+
+Write S_M = S, S_{MN} = { \tilde{sigma} in Gal(MN/K): \tilde{sigma}|M is in S}.
+
+If \tilde{sigma} = (\sigma,eta_1), \tilde{\tau} = (\tau,\eta_2),
+
+then \tilde(\tau} \tilde{\sigma} \tilde{tau}^{-1}  = (\tau \sigma \tau^{-1}, \eta_1).
+
+So conjugacy classes upstairs are conjugacy classes downstairs crossed with single elements of the abelian group A.
+
+Then S_{MN} is a union of [N:K] classes in Gal(MN/K).
+
+By Chebotarev for MN/K, {p of K: [MN/K,p] = class of (sigma,n)} has density |S|/([M:K]*[N:K]).
+
+Bob says that some version of Chebotarev implies:
+
+sum_{[MN/K,p] = Class(\sigma x \eta)} 1/Np^s \sim |S|/([M:K][N:K]) log(1/s-1)
+
+So
+
+sum_{[M/K,p] = [sigma] \chi(p)/Np^s = sum_{\tau in Gal(N/K)} \sum){[MN/K/p] = Class(\sigma x \tau) \chi(tau)/Np^s
+
+\sim
+
+(\sum_{\tau} \chi(\tau) |S|/([M:K][N:K]) log(1/s-1)
+
+\sim {|S|/[M:K] log(1/s-1), chi = chi_0
+     {0, otherwise
+
+Now consider a case of non-disjointness: M/K is abelian and M is contained in N.
+
+
+N
+| H
+M       } A
+| G
+K            
+
+Then, for sigma in Gal(M/K), Class(sigma) = sigma.
+
+If sigma_1 in Gal(N/K) is a class lifting sigma, then the other elements are in sigma_1 + H.  
+
+sum_{[M/K,p] = [sigma]} \chi(p)/Np^s = \sum_{t \in H} \summ_{[N/K,p] = 
+
+\sigma_1 + \tau} \chi(\sigma_1 + \tau)/Np^s 
+
+chi: A -> C^{\times} is a homomorphism.
+
+If chi is trivial on H, then all the terms are equal, and the sum becomes 
+
+\sum_{\tau in H} \chi(s) 1/[N:K] log(1/s-1) = 
+
+\chi(sigma) [N:M]/[N:K] log(1/s-1) = \chi(sigma)/[M:K] log(1/s-1).
+
+Whereas if chi is not induced by a character of Gal(M/K),
+
+then 
+
+\sum_{[M/K,p]} \chi(p)/Np^s \sim \chi(sigma) 1/[M:K] log(1/s-1)
+
+whereas if \chi is not induced by a character of Gal(M/K), a similar computation shows that the sum is 
+
+equivalent to 0.
+
+There exists a possibly different \delta'_{chi} such that 
+
+log f_{\chi}(s) = \delta'_{chi} log(1/s-1) + g_{chi}(s)
+
+for g_{\chi}(s) holomorphic on Re(s) = 1.
+
+Hence 
+
+f_{chi}(s) = (s-1)^{- delta'_{chi}} + exp(g_{chi}(s))
+
+note the exponent is in general a complex number.
+
+sum_{chi} f_{chi}(s) = \sum_{a in N} \sum_{chi} chi(a)/Na^s
+
+=
+
+{[N:K], if [a,N/K] = 1
+{0    , if [a,N/K  =/= 1
+
+= 
+
+sum_{chi} (s-1)^{-\delta_{chi}} exp(g_{chi}(s))
+
+So we need to know something about how many exponents -\delta_{chi} are nonzero.  
+
+Can work around this by looking carefully at all the cases.  
+
+

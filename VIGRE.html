@@ -1,0 +1,373 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0039)http://math.uga.edu/~pete/papers/ --><HTML><HEAD><TITLE>2007 UGA Number Theory VIGRE group</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.6000.16481" name=GENERATOR><!--CHANGE--></HEAD>
+<BODY><SPAN style="COLOR: rgb(0,0,0)">&nbsp; </SPAN><BR 
+style="COLOR: rgb(0,0,0)"><!--NAME-->
+<TABLE width="100%">
+  <TBODY>
+  <TR width="100%">
+    <TD><B style="COLOR: rgb(0,0,0)"><FONT size=+2>&nbsp; UGA VIGRE Number Theory Group</FONT></B> <SPAN style="COLOR: rgb(0,0,0)"></SPAN><BR 
+      style="COLOR: rgb(0,0,0)"></TD>
+    <TD align=right><A href="http://math.uga.edu/~pete/"><I>Return to Pete's 
+      home page</I></A></TD></TR></TBODY></TABLE>
+<HR style="COLOR: rgb(0,0,0)" width="100%">
+<!--CHANGE-->
+
+This is the official page for the 2007-2008 VIGRE study group 
+on computations on CM elliptic curves, led by Pete L. Clark and Dr. 
+Patrick Corn.
+<BR><BR>
+<B>BACKGROUND MATERIAL</B>
+Our project concerns the torsion subgroup of the group E(K) of K-rational points of a CM elliptic curve E defined 
+over a number field K.  Would it not therefore be a splendid 
+beginning to learn the meaning of all of these terms?  Let us try.  Taking 
+them in turn:
+<BR><BR>
+The <b>torsion subgroup</b> of an abelian group A -- with group law written additively -- is just the subset of A of elements of finite order.  Indeed it is a subgroup, denoted A[tors].  For any positive 
+integer n, we define the <b>n-torsion subgroup</b> to be the 
+set of a in A with na = 0; it is denoted by A[n].  Note that 
+A[tors] is the union of A[n] as n ranges over all positive integers; A[tors] might, or might not, be equal to A[n] for some 
+fixed n (for instance, it will be if A is finite).  
+<BR><BR>
+A <b>number field</b> K is a finite degree field extension of 
+the rational numbers.  Its degree, denoted [K:Q], is its dimension 
+as a Q-vector space.  The data for a number field of degree d 
+is an irreducible degree d polynomial P(x) over the rational 
+numbers, but there are infinitely many different polynomials giving rise to each fixed number field. The unique number field of degree 1 is Q itself, but for each d > 1 there are infinitely many degree d number fields.  Everyone has heard of the quadratic fields Q[sqrt{d}] -- corresponding to the polynomials X^2-d for squarefree integers d -- which are the number fields of degree 2.  It is not nearly so easy to give such a transparent "parameterization" of all degree d number fields for any d > 2.  
+<BR><BR>
+An <b>elliptic curve</b> over a field K is <i>given by</i> an 
+equation of the form <BR><BR>
+Y^2 = P<sub>A,B</sub>(X) = X^3 + AX + B 
+<BR><BR>
+with A and B in K, such that 
+<BR><BR>
+Delta(P) = 4A^3+27B^2 =/= 0
+<BR><BR>
+Delta is called the <b>discriminant</b> of the cubic polynomial 
+P = P<sub>A,B</sub>(X), and the condition that it be nonzero is 
+precisely requiring that P has no multiple roots.  
+<BR><BR>
+The set E(K) of K-rational points of E is the collection of 
+all (x,y) in K^2 satisfying the equation, i.e., such that 
+y^2 = x^3+AX+B, together with one additional point O called the 
+<b>point at infinity</b>.  
+<BR><BR>
+There is a simple (but not so simple that we will describe it here) geometric construction called the <b>chord-and-tangent process</b> which endows the set E(K) 
+with the structure of an abelian group with the point at infinity 
+O as the identity element.  
+<BR><BR>
+This definition makes sense for an arbitrary field K.  For 
+example, if K = C is the field of complex numbers, the group E(C) 
+is always isomorphic to the <b>torus</b> S^1 x S^1.  In particular 
+we may observe that (i) it is a very large group (infinite and with "continuously varying" elements, i.e., a <b>Lie group</b>) 
+and (ii) its group structure does not depend upon which A and B 
+we started with.  Moreover, E(C)[tors] = S^1[tors] x S^1[tors], 
+and the torsion subgroup of the unit circle is the group Q/Z of all roots of unity in the complex numbers.  In particular 
+the n-torsion subgroup S^1[n] is the group of all nth roots of 
+unity, so is the cylic group Z/nZ of order n.  Therefore 
+E(C)[n] is isomorphic to Z/nZ x Z/nZ, and the entire torsion 
+subgroup E(C)[tors] is isomorphic to Q/Z x Q/Z, the union 
+(or, if you like, the <b>direct limit</b>) of all of the n-torsion subgroups.  
+<BR><BR>
+If K is a <b>finite</b> field of order q, then even from what little we have said it is clear that E(K) is a finite group: indeed, there cannot be any more than #(K x K) + 1  = q^2 + 1 
+elements.  In fact one can do better: a theorem of Hasse asserts 
+that 
+<BR><BR>
+|#E(K)-(q+1)| <= 2*sqrt{q}.
+<BR><BR>
+This bound is very close to being "best possible"; i.e., with very 
+few exceptions (which are completely known), if N is a positive integer such that |N - (q+1)| <= 2*sqrt{q}, 
+then there exists an elliptic curve E over K with #E(K) = N.  
+<BR><BR>
+In particular the group E(K) certainly does depend upon the choice 
+of A and B.  The study of all possible groups E(K) for varying 
+E and (finite) K is a problem of great interest to cyptographers. 
+<BR><BR> 
+Most interesting for us will be the case in which K is a number 
+field, since in this case we have the all-important: 
+<BR><BR>
+<b>Mordell-Weil Theorem:</b> The group E(K) is a finitely 
+generated abelian group, hence of the form Z^r x E(K)[tors], 
+with E(K)[tors] a <i>finite</i> abelian group.  
+<BR><BR>
+The theorem was proven for K = Q by the great Philadelphian 
+mathematician <b>Louis Joel Mordell</b>, who -- like Joe Harris, Noam Chomsky, Bill Cosby and me -- attended Central High School.  The case of an arbitrary number field (and even more...) is due to the great French mathematician <b>Andre Weil</b>.  
+<BR><BR>
+The reader will doubtless have noticed the steeply increasing 
+difficulty in our sequence of definitions: the torsion subgroup 
+appears to be, and is, a simple group-theoretic concept: there is 
+very little further to be said.
+<BR><BR>
+A number field is a simple enough object to define, but their 
+study swiftly becomes intricate: this leads to the realm of 
+<b>algebraic number theory</b>.  We will at various points need 
+to know some of this theory: in particular we will need to know 
+that every number field K has a ring of integers Z_K (the ring of 
+integers of Q is the ordinary integers Z; the ring of integers 
+of Q[\sqrt{d}] is sometimes Z[\sqrt{d}] but it other times a 
+slightly larger ring, "and so on"), that every nonzero prime ideal P of Z_K is maximal and such that the quotient field Z_K/P is 
+finite, and especially the fact that ideals in Z_K factor uniquely 
+into products of primes, although elements may not.  At some point, it will become helpful to know how to <b>complete</b> 
+a number field with respect to one of the prime ideals in its 
+ring of integers, getting a <b>p-adic field</b>.
+<BR><BR>
+There are many fine textbooks on algebraic number theory.  We mention two:
+<BR><BR>
+Daniel Marcus, <i>Number Fields</i>, Springer Universitext.
+<BR><BR>
+Marcus' book is concise and core-minded, and develops the necessary facts with complete detail and with little unnecessary 
+sophistication.  It also has many good exercises, so is ideal for 
+self-study.
+<BR><BR>
+Serge Lang, <i>Algebraic Number Theory</i>, Springer Graduate 
+Texts in Mathematics.
+<BR><BR>
+The (sadly recently deceased) Lang was one of the great number 
+theorists of the latter half of the twentieth century, and wrote 
+many (many!) books.  This one is a standard reference in the 
+subject, including many things that are, frankly, virtually 
+guaranteed to be impenetrable upon a casual reading, like class 
+field theory.  (So as not to scare you, I will not comment on 
+whether class field theory would be very useful to know 
+for certain aspects of our project!)  Nevertheless it is a good 
+book to have on hand, and by perusing the beginning one can get a 
+reasonable glimpse of the "local" theory alluded to above.
+<BR><BR>
+Evidently our discussion of an elliptic curve E/K and the group E(K) raised many more questions than it answered: why is an elliptic curve only "given by" an equation (1) -- what <i>is</i> it then?  And what was that about the chord-and-tangent process, and this mysterious point at infinity??
+<BR><BR>
+These questions have very satisfying answers.  To give them requires some space, time, helpful pictures, and participatory contemplation on your part, so it does not seem 
+fruitful to include them here.  In fact, the simple trick of introducing an extra variable Z to get a homogeneous equation in 
+projective space clears up almost all of these matters (except 
+the associativity of the group law).  The real sticking point 
+in elliptic curve theory is that it is right on the border 
+between being something which can be pursued as a purely 
+algebraic subject -- i.e., by actually writing down equations 
+for everything, including the group law on E(K) -- and something 
+which requires some cognizance of <b>algebraic geometry</b> for a 
+good conceptual understanding.  Algebraic geometry is one of those 
+subjects where setting up the proper foundations takes a disproportionate amount of time and effort compared to what one 
+will ultimately think about and use when doing research in that 
+subject and related areas.  It is not fair to a would-be arithmetic geometer to say, "Read [[Hartshorne]] and then when you're done with that you can learn about elliptic curves."  So 
+the trick in learning basic elliptic curve theory is to get the 
+minimum dose of algebraic geometry necessary to be able to think 
+about <i>some</i> aspects of elliptic curve theory, and then 
+to learn more about the subject when one wishes to or sees profit 
+in it.  There are two textbooks that accomplish this very well:
+<BR><BR>
+J.W.S. Cassels, <i>Lectures on elliptic curves</i>, LMS.
+<BR><BR>
+Cassels is, along with John Tate and Igor Shafarevich, one 
+of the principal founders of the arithmetic theory of elliptic curves 
+(and, what makes him even more of a hero of mine, of curves of 
+genus one that are not necessarily elliptic curves).  However, 
+if one reads his books and even his research papers, he has a real 
+preference for concreteness.  Really he likes to prove theorems by manipulating actual equations.  As usual, the equations he writes down were not discovered by accident but come from a conceptual 
+and theoretical understanding.  Whereas most earlier elliptic curve theorists (e.g. Weber) would simply write down the equations and trust that, if you really are interested, you will perform enough similar calculations to figure out what is going on -- but will not condescend to come straight out and tell you -- and many contemporary theorists will expect you to master years of 
+background theory before you can go on to touch anything new, 
+Cassels is simply wonderful at giving you just enough background to understand what he is doing.  His book is highly recommended.
+<BR><BR>
+Joseph A. Silverman, <i>Introduction to the Arithmetic of Elliptic 
+Curves</i>, Springer Graduate Texts in Mathematics.
+<BR><BR>
+An equally spectacular book, justly the standard "serious" 
+reference on elliptic curves.  Silverman's book takes a more 
+explicitly arithmetic-geometric viewpoint -- Chapter 1 is on 
+algebraic varieties and Chapter 2 is on algebraic curves; elliptic curves as Y^2 = X^3+AX+B only appear in Chapter 3.  But Silverman's mastery of arithmetic geometry is such that he has 
+skillfully parcelled it out into manageable pieces.  Moreover, 
+and this is very much the point for us -- to a large degree he 
+has written the book so that you have a large amount of leeway 
+to take or leave each piece of geometric background independently, 
+according to taste.  I recommend that you read through Chapter 1 
+rather carefully -- it is only 15 pages long including exercises, and this is the little bit of geometry that goes a long way.  Then 
+flip through Chapter 2 more cursorily -- if you have no previous 
+background in geometry you will almost surely find things like differentials and the Riemann-Roch theorem to be difficult to 
+understand but -- even more -- difficult to understand why they 
+are being discussed.  Then move on to Chapter 3, and, if you like, 
+beyond.  You will be led back to the topics in Chapter 2 exactly 
+when they help you to increase your understanding of elliptic curves.  
+<BR><BR>
+We still have not said what it means for an elliptic curve to have 
+complex multiplication.  It is in fact a level of abstraction yet 
+above: every elliptic curve has an <b>endomorphism ring</b>: see 
+Section 3.9 of Silverman.  Over a field of characteristic 0 
+(so over any number field) the endomorphism ring is either just 
+the integers, or it is an integral domain whose quotient field 
+is an imaginary quadratic field Q(\sqrt{-d}).  Curves of the latter sort are said to have complex multiplication (CM).  
+<BR><BR>
+It turns out that the CM / non-CM dichotomy recurs throughout 
+the deeper study of elliptic curves.  As a general rule, CM elliptic curves are much more special than non-CM elliptic curves 
+(for instance, over the complex numbers there are uncountably 
+many isomorphism classes of elliptic curves but only countably 
+many of them which have CM) and they have a simpler structure 
+that they can be exploited in various ways.  
+<BR><BR>
+There is something called the theory of complex multiplication, which was historically the first major link between the three fields of arithmetic geometry, algebraic number theory, and modular functions and modular forms.  This is a very important 
+story, but also a very complicated one: you will find only 
+the briefest hint of it in Silverman's book, on pages 338-342.  
+To learn about it you can read Chapter II of the sequel to Silverman's book, the aptly named <i>Advanced Topics in the Arithmetic of Elliptic Curves</i>.  Evidently if we are going to 
+recommend a GTM as part of the background reading for a semester long seminar, we cannot very well recommend that you also read 
+the more advanced book that came after it, so the truth is that 
+we will be treating many facts about CM elliptic curves as <b>BLACK BOXES</b> in our work group this semester.  
+<BR><BR>
+In the spring semester I will also be teaching the 8000 level topics course in arithmetic geometry.  At that time it could be 
+appropriate to discuss complex multiplication in more detail, and if our project continues in the spring we may wish to consider 
+certain closely related problems, to which a more active knowledge 
+of the CM theory could be fruitfully applied.
+<BR><BR>
+<b>Our Problems</b>
+<BR><BR>
+The general setup will be as follows: K/Q is a number field 
+of degree [K:Q] = d, and E/K is an elliptic curve.  For the most 
+part, we will be restricting our attention to elliptic curves 
+with <b>C</b>omplex <b>M</b>ultiplication (CM).
+<BR><BR>
+<b>Problem 0</b>: Compute the torsion subgroup E(K)[tors] of 
+the Mordell-Weil group E(K) of K-rational points on E.
+<BR>
+Comment: This problem has an amazingly short solution: it suffices 
+to input E into MAGMA and type 
+TorsionSubgroup(E).  But I for one would like to know how MAGMA 
+does this.
+<BR><BR>
+<b>Problem 1</b>: Create and implement an algorithm for the 
+following problem: <BR><BR>
+<b>INPUT</b>: A positive integer d.
+<BR><BR>
+<b>OUTPUT</b>: The complete list of groups G which 
+are (up to isomorphism) the torsion subgroup E(K)[tors] 
+of some CM elliptic curve E defined over some (any!) number field 
+K of degree [K:Q] = d.
+<BR><BR>
+Comments on previous work on this problem:
+<BR><BR>
+First it is important to know that for any d the list will be <b>finite</b>.  For our case of CM elliptic curves this is 
+relatively easy to prove; moreover work of Silverberg, Prasad-Yogananda and Hindry-Silverman gives workable explicit 
+upper bounds: the gap between these upper bounds and what 
+sorts of torsion we should be able to exhibit will be of interest 
+to us, but is a comparatively modest one. 
+<BR><BR>
+But one should 
+certainly keep in mind the spectacular <b>Strong Uniform Boundedness Theorem</b> of Loic Merel: in 1996, Merel proved that as we 
+range over all elliptic curves defined over degree d number fields, only finitely many groups arise as torsion subroups
+(<A href="http://math.uga.edu/~pete/Merel96.pdf">click here</A>). 
+<BR><BR>
+The case of d = 1 -- i.e., elliptic curves over Q --  is the subject of a 1974 paper by Loren Olson 
+(<A href="http://math.uga.edu/~pete/Olson1974.pdf">click here</A>).  He shows that |G| is 1,2,3,4 or 6, and that 
+both groups of order 4 occur.  In fact he gives a 
+separate classification for each of 13 rational CM j-invariants, 
+obtaining e.g. the following stronger result: for j = 0 
+the torsion subgroup has order 1,2,3 or 6, and for j = 1728 
+the torsion subgroup has order 2 or 4 (and both group structures).
+<BR><BR>
+Before we wave goodbye to elliptic curves over Q, let us mention 
+the following related results:
+<BR><BR>
+In 1977, Gerhard Frey gave the classification of torsion subgroups of elliptic curves over Q with integral j-invariant 
+(<A href="http://math.uga.edu/~pete/Frey77.pdf">click here</A>).  Since the 
+j-invariant of any CM elliptic curve over a number field is 
+an algebraic integer, Frey's set of rational elliptic curves contains Olson's set (and in fact is vastly larger).  Curiously, the result is the same 
+as Olson's theorem: |G| = 1,2,3,4, or 6.
+<BR><BR>
+Also in 1977, Barry Mazur (<A href="http://math.uga.edu/~pete/Mazur77.pdf">click here</A>) classified the torsion subgroups of <b>ALL</b> 
+elliptic curves over Q, getting the following list: Z/NZ for 
+1 <= N <= 10 or N = 12; Z/2Z x Z/2NZ for 1 <= N <= 4.  In 
+particular, |G| <= 16. 
+<BR><BR>
+A few years ago X. Xarles and I proved (<A href="http://math.uga.edu/~pete/cx6.pdf">click here</A>) that for a 
+third subclass of rational elliptic curves strictly containing those of integral j-invariant, the torsion subgroups are again the same as in the theorems of Olson and Frey.  I mention this mostly
+because you might find our proof easier to understand than Olson's, which uses results from the theory of complex multiplication.   
+<BR><BR>
+In the case d = 2, the answer is the following: <BR><BR>
+G = Z/NZ for N = 1,2,3,4,6,7, or 10; or <BR>
+G = Z/2Z x Z/NZ for N = 1,2,3, or 4; or <BR>
+G = Z/3Z x Z/3Z.
+<BR><BR>
+This is a special case of a theorem of Muller, Stroher and Zimmer, 
+who in 1989 solved the larger problem of classifying torsion subgroups of elliptic curves over quadratic fields 
+with algebraic integral j-invariant.  The computations here are 
+substantial -- <A href="http://www.math.uga.edu/~pete/MullerStroherZimmer89Review.pdf">their paper</A> is 62 pages long, much of it tables 
+recording their results.
+<BR><BR>
+In the case d =3, the answer is the following: <BR><BR>
+G = Z/NZ for N = 1,2,3,4,6,9 or 14; or <BR>
+G = Z/2Z x Z/2Z.  
+<BR><BR>
+A similar story holds here: the larger problem of classifying 
+torsion subgroups of elliptic curves with algebraic integral 
+j-invariant over cubic fields was solved by Horst Zimmer's 
+computational research group, first in 1990 for a special kind 
+of cubic number field, and then in 1997 in general (CITE).  The 
+amount of computation required for this is massive and impressive.
+<BR><BR>
+But take heart -- Zimmer's team was working on a much more general 
+problem.  Restricting (as we have here) to the class of CM 
+elliptic curves, I found in the summer of 2004 a different approach which allowed the above d = 2, d = 3 cases to be reduced 
+to a much more tractable calculation, which (even) I was able 
+to implement on my harried McGill office desktop without too much 
+trouble.  This is described in my arxiv preprint (CLICK HERE).  
+<BR><BR>
+To set a specific goal, I would like us to extend these 
+calculations to the cases d = 4 and d = 5.  In principle one 
+can use the same procedure as in the d = 2 and d = 3 cases, 
+although in practice we should certainly keep an eye out for 
+possible improvements (or totally different approaches).  Ultimately the problem reduces (or at least can be reduced) to 
+a computation involving a zero-dimensional ideal in a polynomial 
+ring, so some rather visceral knowledge about how best to 
+implement this calculation -- including software issues (any number of programs will do this calculation -- I used MAGMA -- 
+but which will do it fastest?) and hardware issues (memory 
+allocation and that sort of thing) will be very helpful.
+<BR><BR><BR><BR>
+<B>SUPPLEMENTARY READING</B>
+<BR><BR>
+The algorithm that I have in mind is described in the case where d is a prime in Section 3.3 of the following 
+preprint (of mine):
+<BR><BR> 
+<LI><I>Bounds for torsion on abelian varieties with integral moduli</I> (<A 
+  href="http://math.uga.edu/~pete/arxivpreprint.pdf">pdf</A> )
+<BR><BR>
+Here are some papers on the subject of torsion points on elliptic 
+curves (the link may be either to the paper or to the MathSciNet review of the paper):
+<BR><BR>
+1969: Manin, <I>The p-torsion of elliptic curves is uniformly bounded</I> 
+(<A href="http://math.uga.edu/~pete/ManinReview.pdf">pdf</A>)
+<BR><BR>
+1974: Olson, <I>Points of finite order of elliptic curves with complex multiplication</I>
+(<A href="http://math.uga.edu/~pete/Olson1974.pdf">pdf</A>)
+<BR><BR>
+1986: Reichert, <I>Explicit determination of nontrivial torsion structures of elliptic curves 
+over quadratic number fields</I>
+(<A href="http://math.uga.edu/~pete/Reichert86.pdf">pdf</A>)
+<BR><BR>
+1988: Kenku and Momose, <I>Torsion points on elliptic curves defined over quadratic fields</I>
+(<A href="http://math.uga.edu/~pete/KenkuMomose88.pdf">pdf</A>)
+<BR><BR>
+1999: Parent, <I>Bornes effectives pour la torsion des courbes elliptiques sur les 
+corps de nombres</I> [Effective bounds for the torsion of elliptic curves over number 
+fields] (<A href="http://math.uga.edu/~pete/Parent99Review.pdf">pdf</A>)
+<BR><BR>
+Some further useful information: <BR><BR>
+The following gives a complete list of imaginary quadratic fields with class number d, for 1 <= d <= 23:
+(<A href="http://www.numbertheory.org/classnos/">click here</A>)
+<BR><BR>
+Let O = O<sub>f</sub> be the order of conductor f in the imaginary quadratic field K of discriminant D<sub>0</sub>.  Then 
+the class number h(O) of the order is related to the class number h of the maximal order as follows:
+<BR><BR>
+h(O)/w(O) = (h/w)*f*(&Pi <sub>p|f</sub>(1 - (D<sub>0</sub>/p)/p)).
+<BR><BR>
+Here w is the number of units in the ring of integers of K and w(O) is the number of units in 
+the order O (so w = 2,4, or 6), and (D/p) is the Legendre symbol.  
+<BR><BR>
+Luckily for us, MAGMA knows how to compute the minimal polynomial corresponding to the Galois 
+conjugacy class of j-invariants of elliptic curves with CM by a quadratic order of discriminant 
+D = D<sub>0</sub> * f<sup>2</sup>: 
+(<A href="http://www.msri.org/about/computing/docs/magma/html/text1337.htm">click here</A>)
+
+
+<HR><BR>
+<FONT COLOR="#8B000">MAGMA CODE</FONT> Click 
+<A href="http://math.uga.edu/~pete/magmacode.html">here</A>
+to access the MAGMA code.  
+<BR><BR>
+Here is a draft of a paper that summarizes past results and contains some theorems and conjectures to be proved this semester:
+<A href="http://math.uga.edu/~pete/torspaper.pdf">pdf</A>

@@ -1,0 +1,91 @@
+Seyfi's Talk, September 25:
+
+Elliptic Curves with all quadratic twists of positive rank
+
+Definition: E/Q an elliptic curve.
+
+L(E/Q,s) = \prod_{good p} \frac{1}{1-a_p p^{-s} + p^{1-2s}} \prod_{p bad} \frac{1}{1-a_p p^{-s}}
+
+a_p = p+1 - #E(F_p), if E has good reduction
+    = 1            , split multiplicative reduction
+    = -1           , nonsplit multiplicative
+    = 0            , p cuspidal
+
+Reference: p. 360, Silverman's book AEC
+
+[analogous definition over a number field]
+
+\Lambda(E/Q,s) = N_{E/Q}^(s/2) (2\pi)^{-s} \Gamma(s) L(E/Q,s)
+
+N_{E/Q} = conductor of the elliptic curve = \prod p^{f_p} 
+f_p = 0 if p is good, 1 if p is nodal, 2 + \delta_p, p cuspidal,
+\delta_p measures wild ramification
+
+\Gamma(s) = \int_0^{\infty} t^{s-1} e^{-t} dt
+
+extends meromorphically to all of C.
+
+Let E/K an elliptic curve, F/K a quadratic extension
+
+L(E/F,s) = L(E/K,s) L(E^F/K,s)
+
+Conjecture (Hasse-Wweil): \Lambda(E/K,S) has an analytic continuation of all of C and satisfies
+
+\Lambda(E/K,s) = w(E/K) \Lambda(E/K,2-s)
+
+Thus the root number is +1 if the order of vanishing at s = 1 is even, -1 if the order of vanishing at s = 1 is odd.
+
+Example: If the L-function does not vanish at s = 1, then the root number is equal to 1.  
+
+Definition: E/K is Lawful if w(E/F) = 1 for every quadratic extension F/K.
+
+Remark: E is lawful if for all quadratic twists F/K, w(E^F/K) = w(E/K).  
+
+This follows from the elementary fact together with the conjectured analytic continuation.
+
+Definition: w(E/K) = \prod_v w(E/K_v)
+
+The local root number at every Archimedean place is -1.  
+
+For all v,
+
+w(E/K_v) := \epsilon(\sigma^1_{E,v},\psi,dx)/|\epsilon(\sigma^{1_{E,v},\psi,dx)|
+
+\epsilon-factor of canonical representation of the Weil-Deligne group of K_v
+
+\psi = unitary character of K_v
+
+dx = Haar measure on K_v
+
+Thm (Rohrlich 1996, p. 329)
+
+K = Q
+
+w(E/\R) = -1 
+
+For a prime p, if E has multiplicative reduction at p, then 
+w(E/Q_v) = \chi(-1), \chi is the character of Q associated to F(\sqrt{-c_6})/F
+
+v_p(j(E)) < 0, then w(E/Q_v) = \chi(-1)
+
+Definition: E is lawful good w(E/K) =  1
+                 lawful evil w(E/K) = -1
+
+Chaotic: not lawful.
+
+BSD: Lawful evil: w(E/K) = w(E^F/K) = -1, then 
+
+rk(E/F) = rk(E/K) + rk(E^F/K) > rk(E/K)
+
+for all quadratic F/K!
+
+Theorem 1: E/K an elliptic curve.  TFAE: \\
+(i) E/K is lawful.
+(ii) E/K_v is lawful for all places v.
+(iii) w(E/F) = w(E/K)^{[F:K]} for all finite extensions F/K
+(iv) K has no real places and E acquires everywhere good reduction over an 
+abelian extension L of K.  
+(v) K has no real places and for all primes p and all places v not dividing p 
+f K, the action of G(\overline{K_v}/K_v) on T_p(E) is abelian.
+
+
